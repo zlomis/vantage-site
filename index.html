@@ -292,6 +292,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .tm-stat{text-align:center;padding:16px;background:var(--blue-faint);border:1px solid var(--blue-border);border-radius:var(--r)}.tm-stat-n{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--blue);line-height:1}.tm-stat-l{font-size:12px;color:var(--text);margin-top:6px}
 .prob-context-body{font-size:16px;color:var(--text2);line-height:1.82}
 </style>
+<!-- MailerLite Universal -->
+<script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account','2218827');</script>
+<!-- End MailerLite Universal -->
 </head>
 <body>
 
@@ -571,12 +574,12 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div class="nl-right">
         <div class="nl-form-box">
           <p style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:16px">Subscribe to The Vantage Brief</p>
-          <!-- MAILERLITE EMBED: replace this block with your MailerLite embedded form code -->
+          <!-- MailerLite embedded form (hidden, triggered by button below) -->
+          <div style="display:none"><div class="ml-embedded" data-form="hr8zo5"></div></div>
           <div class="nl-inline-form">
             <input class="nl-big-input" id="nlEmailInput" type="email" placeholder="Your email address" />
-            <button class="nl-big-btn">Subscribe <i class="fas fa-arrow-right"></i></button>
+            <button class="nl-big-btn" onclick="submitToMailerLite(event)">Subscribe <i class="fas fa-arrow-right"></i></button>
           </div>
-          <!-- END MAILERLITE EMBED -->
           <p class="nl-fine">We respect your inbox. Unsubscribe anytime.</p>
         </div>
       </div>
@@ -705,6 +708,28 @@ document.getElementById('contactForm').addEventListener('submit',function(e){
       btn.disabled=false;
     });
 });
+
+function submitToMailerLite(e){
+  e.preventDefault();
+  const email=document.getElementById('nlEmailInput').value.trim();
+  if(!email||!email.includes('@')){document.getElementById('nlEmailInput').focus();return;}
+  // Inject email into hidden MailerLite form and submit it
+  const mlForm=document.querySelector('.ml-embedded form');
+  if(mlForm){
+    const mlInput=mlForm.querySelector('input[type="email"]');
+    if(mlInput){mlInput.value=email;}
+    mlForm.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));
+  } else {
+    // MailerLite JS not yet loaded — fallback: open ML hosted form
+    window.open('https://dashboard.mailerlite.com/forms/hr8zo5','_blank');
+  }
+  const btn=e.currentTarget;
+  btn.innerHTML='<i class="fas fa-check"></i> You\'re on the list!';
+  btn.style.background='#16a34a';
+  btn.disabled=true;
+  document.getElementById('nlEmailInput').value='';
+  setTimeout(()=>{btn.innerHTML='Subscribe <i class="fas fa-arrow-right"></i>';btn.style.background='';btn.disabled=false;},4000);
+}
 
 function loadVideo(){
   document.getElementById('videoThumb').style.display='none';
