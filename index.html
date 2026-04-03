@@ -84,7 +84,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 @keyframes sw{0%{opacity:1;top:5px}100%{opacity:0;top:16px}}
 
 /* SECTION */
-.section{padding:96px 0}
+.section{padding:72px 0}
 .container{max-width:1280px;margin:0 auto;padding:0 32px}
 .sec-eye{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
 .sec-eye::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0}
@@ -327,7 +327,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     <div class="hero-stats">
       <div class="hs"><div class="hs-num">250+</div><div class="hs-lbl">Trials in Kazakhstan</div></div>
       <div class="hs"><div class="hs-num">70-80%</div><div class="hs-lbl">Cost Reduction</div></div>
-      <div class="hs"><div class="hs-num">10</div><div class="hs-lbl">JCI-Accredited Hospitals</div></div>
+      <div class="hs"><div class="hs-num">Top 10</div><div class="hs-lbl">Global CRO Partner</div></div>
       <div class="hs"><div class="hs-num">20M+</div><div class="hs-lbl">Patient Health Records</div></div>
     </div>
   </div>
@@ -570,18 +570,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       </div>
       <div class="nl-right">
         <div class="nl-form-box">
-          <p style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:16px">Subscribe to Issue 2</p>
+          <p style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:16px">Subscribe to The Vantage Brief</p>
           <!-- MAILERLITE EMBED: replace this block with your MailerLite embedded form code -->
           <div class="nl-inline-form">
-            <input class="nl-big-input" type="email" placeholder="Your email address" />
+            <input class="nl-big-input" id="nlEmailInput" type="email" placeholder="Your email address" />
             <button class="nl-big-btn">Subscribe <i class="fas fa-arrow-right"></i></button>
           </div>
           <!-- END MAILERLITE EMBED -->
           <p class="nl-fine">We respect your inbox. Unsubscribe anytime.</p>
-          <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">
-            <p style="font-size:12px;color:var(--text);margin-bottom:10px">Issue 1 is live:</p>
-            <a href="/newsletter.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue)"><i class="fas fa-file-alt"></i> Read The Vantage Brief, Issue 1</a>
-          </div>
         </div>
       </div>
     </div>
@@ -658,7 +654,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       </div>
       <div>
         <h4>Newsletter</h4>
-        <p class="nl-desc">Regulatory updates, Kazakhstan trial insights, and Vantage news. <a href="#newsletter" style="color:var(--blue);font-weight:600">Subscribe</a></p>
+        <p class="nl-desc">Regulatory updates, Kazakhstan trial insights, and Vantage news. <a href="#newsletter" onclick="setTimeout(()=>{var el=document.getElementById('nlEmailInput');if(el){el.focus();}},400);return true;" style="color:var(--blue);font-weight:600">Subscribe</a></p>
       </div>
     </div>
     <div class="footer-bot">
