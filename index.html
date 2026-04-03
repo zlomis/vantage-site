@@ -599,28 +599,27 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       </div>
       <div class="form-box">
         <h3 class="form-ttl">Feasibility Assessment</h3>
-        <!-- FORMSPREE: replace YOUR_FORM_ID below. Go to formspree.io → New Form → copy the 8-char ID from the endpoint URL e.g. https://formspree.io/f/abcd1234 → paste abcd1234 in place of YOUR_FORM_ID -->
-        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/xqegdrkr" method="POST">
           <div class="form-row">
-            <div class="fg"><input type="text" placeholder="Your Name" required /></div>
-            <div class="fg"><input type="email" placeholder="Email Address" required /></div>
+            <div class="fg"><input type="text" name="name" placeholder="Your Name" required /></div>
+            <div class="fg"><input type="email" name="email" placeholder="Email Address" required /></div>
           </div>
-          <div class="fg"><input type="text" placeholder="Company / Organization" /></div>
+          <div class="fg"><input type="text" name="company" placeholder="Company / Organization" /></div>
           <div class="form-2col">
             <div class="fg" style="position:relative">
-              <select required><option value="" disabled selected>Type of Trial</option><option>FIH / POC</option><option>Phase 1</option><option>Phase 2</option><option>Phase 3</option></select>
+              <select name="trial_type" required><option value="" disabled selected>Type of Trial</option><option>FIH / POC</option><option>Phase 1</option><option>Phase 2</option><option>Phase 3</option></select>
               <span class="fg-arr"><i class="fas fa-chevron-down"></i></span>
             </div>
             <div class="fg" style="position:relative">
-              <select required><option value="" disabled selected>Indication</option><option>Oncology</option><option>Neurology</option><option>Metabolic</option><option>Cardiovascular</option><option>Other</option></select>
+              <select name="indication" required><option value="" disabled selected>Indication</option><option>Oncology</option><option>Neurology</option><option>Metabolic</option><option>Cardiovascular</option><option>Other</option></select>
               <span class="fg-arr"><i class="fas fa-chevron-down"></i></span>
             </div>
             <div class="fg" style="position:relative">
-              <select required><option value="" disabled selected>Participants</option><option>10 to 25</option><option>25 to 50</option><option>50 to 100</option><option>100+</option></select>
+              <select name="participants" required><option value="" disabled selected>Participants</option><option>10 to 25</option><option>25 to 50</option><option>50 to 100</option><option>100+</option></select>
               <span class="fg-arr"><i class="fas fa-chevron-down"></i></span>
             </div>
             <div class="fg" style="position:relative">
-              <select required><option value="" disabled selected>When to Start</option><option>Today</option><option>Within 3 Months</option><option>Within 6 Months</option><option>Within a Year</option></select>
+              <select name="timeline" required><option value="" disabled selected>When to Start</option><option>Today</option><option>Within 3 Months</option><option>Within 6 Months</option><option>Within a Year</option></select>
               <span class="fg-arr"><i class="fas fa-chevron-down"></i></span>
             </div>
           </div>
