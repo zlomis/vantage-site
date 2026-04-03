@@ -302,7 +302,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     <ul class="nav-links" id="navLinks">
       <li><a href="#problem" class="nav-lk">The Problem</a></li>
       <li><a href="#solution" class="nav-lk">Our Solution</a></li>
-      <li><a href="#kazakhstan" class="nav-lk">Why Kazakhstan</a></li>
       <li><a href="#partnership" class="nav-lk">Partnership</a></li>
       <li><a href="#compliance" class="nav-lk">Compliance</a></li>
       <li><a href="#newsletter" class="nav-lk">Newsletter</a></li>
@@ -448,40 +447,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   </div>
 </section>
 
-<!-- WHY KAZAKHSTAN — content from deck -->
-<section class="section section-kz" id="kazakhstan">
-  <div class="kz-bg"><img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=1920&q=80" alt="Astana" /></div>
-  <div class="kz-inner container">
-    <div class="sec-header">
-      <div class="sec-eye">Why Kazakhstan</div>
-      <h2 class="sec-title">Kazakhstan's <span class="t-gold">Data Edge</span></h2>
-      <p class="sec-sub">Kazakhstan is a tier 1 digitized economy with a centralized digital health database containing comprehensive medical records for all 20 million citizens. Due to Vantage's relationship with the Kazakhstan Government, we have the opportunity to utilize these data resources and form partnerships related thereto.</p>
-    </div>
-    <div class="kz-grid">
-      <div class="kz-card">
-        <div class="kz-icon"><i class="fas fa-users"></i></div>
-        <h3>Immediate Population Snapshot</h3>
-        <p>Direct overview of the total population and immediate identification of clinical trial candidates across all therapeutic areas.</p>
-      </div>
-      <div class="kz-card">
-        <div class="kz-icon"><i class="fas fa-phone-alt"></i></div>
-        <h3>Frictionless Patient Outreach</h3>
-        <p>Access to a large pool of candidates expediting patient recruitment timelines in ways unavailable in traditional trial markets.</p>
-      </div>
-      <div class="kz-card">
-        <div class="kz-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Data-Driven Site Partnership</h3>
-        <p>Data-driven clinical site partnership creates velocity and flexibility in patient recruitment strategy across all indications.</p>
-      </div>
-      <div class="kz-card">
-        <div class="kz-icon"><i class="fas fa-hospital"></i></div>
-        <h3>World-Class Medical Institutions</h3>
-        <p>First Central Asian country to achieve the WHO 2025 NCD mortality target. One of 22 countries globally with a JCI-accredited Academic Medical Center. Highest-ranked Central Asian healthcare system, 53rd globally per Johns Hopkins.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TIGERMED -->
 <section class="section section-tigermed" id="partnership">
   <div class="container">
@@ -615,7 +580,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
           <p class="nl-fine">We respect your inbox. Unsubscribe anytime.</p>
           <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">
             <p style="font-size:12px;color:var(--text);margin-bottom:10px">Issue 1 is live:</p>
-            <a href="https://vantage-ct.com/newsletter" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue)"><i class="fas fa-file-alt"></i> Read The Vantage Brief, Issue 1</a>
+            <a href="/newsletter.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue)"><i class="fas fa-file-alt"></i> Read The Vantage Brief, Issue 1</a>
           </div>
         </div>
       </div>
@@ -640,7 +605,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       </div>
       <div class="form-box">
         <h3 class="form-ttl">Feasibility Assessment</h3>
-        <form id="contactForm">
+        <!-- FORMSPREE: replace YOUR_FORM_ID below. Go to formspree.io → New Form → copy the 8-char ID from the endpoint URL e.g. https://formspree.io/f/abcd1234 → paste abcd1234 in place of YOUR_FORM_ID -->
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-row">
             <div class="fg"><input type="text" placeholder="Your Name" required /></div>
             <div class="fg"><input type="email" placeholder="Email Address" required /></div>
@@ -692,8 +658,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       </div>
       <div>
         <h4>Newsletter</h4>
-        <p class="nl-desc">Regulatory updates, Kazakhstan trial insights, and Vantage news.</p>
-        <a href="#newsletter" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue);margin-top:4px"><i class="fas fa-arrow-right"></i> Subscribe to The Vantage Brief</a>
+        <p class="nl-desc">Regulatory updates, Kazakhstan trial insights, and Vantage news. <a href="#newsletter" style="color:var(--blue);font-weight:600">Subscribe</a></p>
       </div>
     </div>
     <div class="footer-bot">
@@ -718,15 +683,31 @@ document.querySelectorAll('.nav-lk').forEach(l=>l.addEventListener('click',()=>{
 document.getElementById('contactForm').addEventListener('submit',function(e){
   e.preventDefault();
   const btn=this.querySelector('.btn-submit');
-  btn.innerHTML='<i class="fas fa-check"></i> <span>Thank you. We will be in touch shortly.</span>';
-  btn.style.background='#16a34a';
+  const form=this;
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
   btn.disabled=true;
-  setTimeout(()=>{
-    btn.innerHTML='<span>Submit Your Feasibility Assessment</span><i class="fas fa-arrow-right"></i>';
-    btn.style.background='';
-    btn.disabled=false;
-    this.reset();
-  },4000);
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(r=>{
+      if(r.ok){
+        btn.innerHTML='<i class="fas fa-check"></i> <span>Thank you. We will be in touch shortly.</span>';
+        btn.style.background='#16a34a';
+        setTimeout(()=>{
+          btn.innerHTML='<span>Submit Your Feasibility Assessment</span><i class="fas fa-arrow-right"></i>';
+          btn.style.background='';
+          btn.disabled=false;
+          form.reset();
+        },4000);
+      } else {
+        btn.innerHTML='<span>Something went wrong. Email us directly.</span>';
+        btn.style.background='#dc2626';
+        btn.disabled=false;
+      }
+    })
+    .catch(()=>{
+      btn.innerHTML='<span>Something went wrong. Email us directly.</span>';
+      btn.style.background='#dc2626';
+      btn.disabled=false;
+    });
 });
 
 function loadVideo(){

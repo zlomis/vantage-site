@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Vantage Brief | Issue 1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #E8E8E8;
+    font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito Sans',sans-serif;
+    color: #111;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; background: #fff; }
+
+  /* HEADER */
+  .hdr { background: #fff; padding: 0 44px; }
+  .hdr-bar { height: 5px; background: #1B6FEA; font-size: 0; line-height: 0; margin-bottom: 24px; }
+  .hdr-inner { display: table; width: 100%; padding-top: 24px; padding-bottom: 20px; border-bottom: 1px solid #EBEBEB; }
+  .hdr-logo-td { display: table-cell; vertical-align: middle; }
+  .hdr-logo { height: 38px; width: auto; display: block; }
+  .hdr-right { display: table-cell; vertical-align: middle; text-align: right; }
+  .hdr-issue { display: block; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #1B6FEA; margin-bottom: 2px; }
+  .hdr-date { font-size: 11px; color: #AAAAAA; }
+
+  /* HERO */
+  .hero { background: #0D0D0D; background-image: url('https://storage.mlcdn.com/account_image/2218827/pDYVsWNgFKGBACjuAD1M7dFUPlkWu6k7gtBsD8FS.png'); background-repeat: no-repeat; background-position: right bottom; background-size: 640px 500px; padding: 52px 44px 50px; }
+  .hero-eye { display: table; border-collapse: separate; border-spacing: 10px 0; margin-left: -10px; margin-bottom: 26px; position: relative; z-index: 2; }
+  .hero-eye-td { display: table-cell; vertical-align: middle; }
+  .eye-pill { background: #1B6FEA; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; padding: 5px 12px; }
+  .eye-line { width: 28px; height: 1px; background: #333; display: block; }
+  .eye-txt  { font-size: 10px; color: #888; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+  .hero h1 {
+    font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito',sans-serif;
+    font-size: 46px; font-weight: 800; line-height: 1.06;
+    color: #fff; margin-bottom: 8px; letter-spacing: -.02em;
+    position: relative; z-index: 2; max-width: 500px;
+  }
+  .hero h1 em { font-style: normal; color: #1B6FEA; }
+  .hero-rule { width: 44px; height: 3px; background: #1B6FEA; margin: 22px 0; position: relative; z-index: 2; }
+  .hero p { font-size: 15px; line-height: 1.76; color: #CCCCCC; max-width: 470px; position: relative; z-index: 2; }
+  .hero p strong { color: #fff; font-weight: 700; }
+  .hero p + p { margin-top: 14px; color: #CCCCCC; }
+
+  /* BLUE BAR */
+  .blue-bar { height: 5px; background: #1B6FEA; }
+
+  /* SECTIONS */
+  .sec { padding: 44px 44px; background: #fff; }
+  .sec-gray { background: #F7F7F7; }
+  .sec-eye { display: table; border-collapse: separate; border-spacing: 10px 0; margin-left: -10px; margin-bottom: 14px; }
+  .sec-eye-td { display: table-cell; vertical-align: middle; }
+  .eye-dot { width: 6px; height: 6px; background: #1B6FEA; border-radius: 50%; display: block; }
+  .eye-lbl { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #1B6FEA; }
+  .sec h2 {
+    font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito',sans-serif;
+    font-size: 27px; font-weight: 800; line-height: 1.18;
+    color: #111; margin-bottom: 16px; letter-spacing: -.01em;
+  }
+  .body { font-size: 15px; line-height: 1.78; color: #3A3A3A; }
+  .body strong { color: #111; font-weight: 700; }
+
+  /* STAT GRID */
+  .stats { display: table; width: 100%; border-collapse: separate; border-spacing: 12px; margin-top: 20px; margin-left: -12px; }
+  .stats-row { display: table-row; }
+  .stat {
+    display: table-cell; width: 50%;
+    padding: 26px 22px; text-align: center; background: #fff;
+    border: 1px solid #E2E2E2;
+    border-top: 4px solid #1B6FEA;
+    vertical-align: top;
+  }
+  .stat-n {
+    font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito',sans-serif;
+    font-size: 44px; font-weight: 900; color: #1B6FEA; line-height: 1;
+    margin-bottom: 8px; letter-spacing: -.03em;
+  }
+  .stat-l { font-size: 12px; color: #777; line-height: 1.45; }
+
+  /* ADVANTAGE LIST */
+  .advs { margin-top: 28px; }
+  .adv { display: table; width: 100%; background: #fff; border-left: 4px solid #1B6FEA; border-bottom: 1px solid #F0F0F0; }
+  .adv:last-child { border-bottom: none; }
+  .adv-td-n { display: table-cell; padding: 22px 0 22px 24px; vertical-align: top; width: 44px; font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito',sans-serif; font-size: 30px; font-weight: 900; color: #E2E2E2; line-height: 1; letter-spacing: -.03em; }
+  .adv-td-body { display: table-cell; padding: 22px 24px 22px 20px; vertical-align: top; }
+  .adv-t { font-size: 14px; font-weight: 700; color: #1B6FEA; margin-bottom: 5px; }
+  .adv-b { font-size: 13px; color: #555; line-height: 1.65; }
+
+  /* 250+ CALLOUT */
+  .callout { margin-top: 32px; background: #0D0D0D; padding: 28px 32px; display: table; width: 100%; position: relative; overflow: hidden; }
+  .callout::after { content: ''; position: absolute; right: -8px; top: -20px; width: 80px; height: 160px; background: #1B6FEA; transform: skewX(-14deg); opacity: .18; }
+  .callout-td-n { display: table-cell; vertical-align: middle; white-space: nowrap; padding-right: 24px; }
+  .callout-n {
+    font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito',sans-serif;
+    font-size: 64px; font-weight: 900; color: #fff; line-height: 1;
+    letter-spacing: -.04em; position: relative; z-index: 1;
+  }
+  .callout-n em { font-style: normal; color: #1B6FEA; }
+  .callout-td-div { display: table-cell; vertical-align: middle; width: 1px; padding: 0; }
+  .callout-div { width: 1px; height: 60px; background: #2A2A2A; display: block; }
+  .callout-td-txt { display: table-cell; vertical-align: middle; padding-left: 24px; }
+  .callout-txt { font-size: 14px; font-weight: 500; color: #CCCCCC; line-height: 1.6; position: relative; z-index: 1; }
+  .callout-txt strong { color: #fff; font-weight: 700; }
+  .callout-txt em { font-style: normal; color: #1B6FEA; font-weight: 700; }
+
+  /* FDA MEMO LINK */
+  .fda-bar { display: table; width: 100%; background: #EBF2FE; border-left: 4px solid #1B6FEA; padding: 18px 22px; margin-top: 24px; }
+  .fda-bar-td-text { display: table-cell; vertical-align: middle; }
+  .fda-bar-text { font-size: 13px; color: #333; line-height: 1.55; }
+  .fda-bar-text strong { color: #111; font-weight: 700; }
+  .fda-bar-td-btn { display: table-cell; vertical-align: middle; text-align: right; padding-left: 16px; white-space: nowrap; }
+  .fda-bar-btn { display: inline-block; background: #1B6FEA; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 10px 16px; text-decoration: none; white-space: nowrap; }
+
+  /* PHARMA LOGOS */
+  .pharma-sec { background: #F7F7F7; padding: 32px 44px; }
+  .pharma-lbl { font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #1B6FEA; margin-bottom: 20px; text-align: center; }
+  .pharma-grid { display: table; width: 100%; border-collapse: separate; border-spacing: 2px; background: #E2E2E2; }
+  .pharma-row { display: table-row; }
+  .pharma-cell { display: table-cell; background: #fff; text-align: center; vertical-align: middle; padding: 20px 14px; width: 25%; }
+  .pharma-cell img { max-height: 30px; max-width: 100%; display: inline-block; }
+  .reg-row { text-align: center; margin-top: 18px; }
+  .reg-p { display: inline-block; background: #1B6FEA; color: #fff; font-size: 10px; font-weight: 700; padding: 5px 14px; letter-spacing: .1em; text-transform: uppercase; margin: 2px; }
+
+  /* TIGERMED */
+  .tiger-sec { background: #fff; padding: 44px 44px; }
+  .tiger-header { background: #1B6FEA; padding: 14px 20px; text-align: center; margin-bottom: 24px; }
+  .tiger-header-txt { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: .04em; }
+  .tiger-top { display: table; width: 100%; margin-bottom: 28px; }
+  .tiger-td-logo { display: table-cell; vertical-align: top; width: 124px; padding-right: 24px; text-align: center; }
+  .tiger-logo { width: 100px; height: auto; display: block; margin: 0 auto; }
+  .tiger-site { display: block; margin-top: 8px; font-size: 11px; color: #1B6FEA; text-decoration: none; font-weight: 600; letter-spacing: .04em; text-align: center; }
+  .tiger-td-desc { display: table-cell; vertical-align: top; }
+  .tiger-desc { font-size: 14px; line-height: 1.72; color: #3A3A3A; padding-top: 4px; }
+  .tiger-stats { display: table; width: 100%; border-collapse: separate; border-spacing: 8px; margin-left: -8px; }
+  .tiger-stats-row { display: table-row; }
+  .tstat { display: table-cell; background: #F0F5FF; border: 1px solid #D0E0FA; padding: 18px 16px; width: 33.33%; vertical-align: top; }
+  .tstat-n {
+    font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito',sans-serif;
+    font-size: 26px; font-weight: 800; color: #1B6FEA; line-height: 1;
+    margin-bottom: 5px; letter-spacing: -.02em;
+  }
+  .tstat-l { font-size: 12px; color: #555; line-height: 1.4; }
+
+  /* WHAT'S NEW */
+  .new-item { border: 1px solid #E2E2E2; padding: 24px 26px; margin-top: 0; position: relative; }
+  .new-tag { display: inline-block; background: #1B6FEA; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .16em; padding: 3px 10px; margin-bottom: 12px; }
+  .new-title { font-size: 14px; font-weight: 700; color: #111; margin-bottom: 8px; }
+  .new-body { font-size: 13px; color: #555; line-height: 1.7; }
+
+  /* PROMISE CARDS */
+  .cards { display: table; width: 100%; border-collapse: collapse; margin-top: 28px; border: 1px solid #E2E2E2; }
+  .cards-row { display: table-row; }
+  .card { display: table-cell; padding: 26px 18px; background: #fff; border-right: 1px solid #E2E2E2; vertical-align: top; width: 33.33%; }
+  .card:last-child { border-right: none; }
+  .card-n { font-size: 10px; font-weight: 700; letter-spacing: .14em; color: #CCC; display: block; margin-bottom: 6px; }
+  .card-t { font-size: 12px; font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: .05em; line-height: 1.3; margin-bottom: 7px; }
+  .card-d { font-size: 12px; color: #666; line-height: 1.6; }
+
+  /* BYLINE */
+  .byline { background: #F7F7F7; border-top: 3px solid #1B6FEA; padding: 32px 44px; }
+  .byline-founders { display: table; width: 100%; border-collapse: separate; border-spacing: 0; margin-bottom: 20px; }
+  .byline-row { display: table-row; }
+  .byline-cell { display: table-cell; width: 50%; vertical-align: middle; padding-bottom: 16px; }
+  .byline-cell:first-child { padding-right: 12px; }
+  .byline-cell:last-child { padding-left: 12px; }
+  .byline-founder { display: table; }
+  .byline-td-photo { display: table-cell; vertical-align: middle; padding-right: 12px; }
+  .byline-photo { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid #1B6FEA; display: block; }
+  .byline-td-info { display: table-cell; vertical-align: middle; }
+  .byline-founder-name { font-size: 13px; font-weight: 700; color: #111; margin-bottom: 1px; }
+  .byline-founder-title { font-size: 11px; color: #888; letter-spacing: .02em; }
+  .byline-quote { font-size: 14px; color: #444; line-height: 1.72; font-style: italic; border-left: 3px solid #1B6FEA; padding-left: 16px; }
+
+  /* CTA */
+  .cta { background: #0D0D0D; padding: 36px 44px 32px; position: relative; overflow: hidden; }
+  .cta-sa { position: absolute; bottom: 0px; right: -10px; width: 175px; height: 100%; background: #1B6FEA; transform: skewX(-14deg); opacity: .20; }
+  .cta-sb { position: absolute; bottom: 0px; right: 105px; width: 62px; height: 100%; background: #1B6FEA; transform: skewX(-14deg); opacity: .10; }
+  .cta-sc { position: absolute; bottom: 0px; right: 177px; width: 26px; height: 100%; background: #1B6FEA; transform: skewX(-14deg); opacity: .05; }
+  .cta-pre { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #1B6FEA; margin-bottom: 14px; position: relative; z-index: 2; }
+  .cta h2 {
+    font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito',sans-serif;
+    font-size: 30px; font-weight: 800; color: #fff; line-height: 1.15;
+    letter-spacing: -.01em; margin-bottom: 16px; max-width: 390px;
+    position: relative; z-index: 2;
+  }
+  .cta h2 em { font-style: normal; color: #1B6FEA; }
+  .cta p { font-size: 15px; color: #CCCCCC; line-height: 1.7; max-width: 430px; margin-bottom: 32px; position: relative; z-index: 2; }
+  .cta-btn { display: inline-block; background: #1B6FEA; color: #fff; font-family: 'Century Gothic','CenturyGothic','AppleGothic','Nunito Sans',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 16px 34px; text-decoration: none; position: relative; z-index: 2; }
+  .cta-sub { display: block; margin-top: 10px; font-size: 12px; color: #888; position: relative; z-index: 2; }
+  .cta-sub a { color: #1B6FEA; text-decoration: none; font-weight: 600; }
+
+  /* FOOTER */
+  .ftr { background: #080808; padding: 28px 44px; }
+  .ftr-top { display: table; width: 100%; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #181818; }
+  .ftr-td-logo { display: table-cell; vertical-align: middle; }
+  .ftr-logo { height: 26px; width: auto; filter: brightness(0) invert(1); opacity: .35; display: block; }
+  .ftr-td-nav { display: table-cell; vertical-align: middle; text-align: right; }
+  .ftr-nav a { font-size: 10px; color: #444; text-decoration: none; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; margin-left: 18px; }
+  .ftr-disc { font-size: 10px; color: #333; line-height: 1.7; }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#E8E8E8;" bgcolor="#E8E8E8">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Welcome to Vantage, a clinical trials platform in Kazakhstan, built by biotech operators and investors to solve that problem without compromising scientific rigor or global regulatory standing.&#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;</div>
+
+<!-- Email wrapper -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background:#E8E8E8;" bgcolor="#E8E8E8"><tr><td style="padding:20px 10px;text-align:center;">
+<div class="wrap" style="text-align:left;">
+
+  <!-- HEADER -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background:#ffffff;">
+    <tr><td height="5" style="background:#1B6FEA;font-size:0;line-height:0;">&nbsp;</td></tr>
+    <tr>
+      <td style="padding:24px 44px 20px;border-bottom:1px solid #EBEBEB;background:#ffffff;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+          <tr>
+            <td valign="middle">
+              <img src="https://storage.mlcdn.com/account_image/2218827/9PXoPIrDsuM9cVQ0DUR0oIAgkprIF9szGpUDi93o.png" alt="Vantage" height="38" style="display:block;height:38px;width:auto;">
+            </td>
+            <td valign="middle" align="right">
+              <span style="display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1B6FEA;margin-bottom:2px;">The Vantage Brief &nbsp;|&nbsp; Issue 1</span>
+              <span style="font-size:11px;color:#AAAAAA;">March 2026</span>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <!-- HERO -->
+  <div class="hero" bgcolor="#0D0D0D">
+    <div class="hero-eye">
+      <div class="hero-eye-td"><div class="eye-pill">Welcome to Vantage</div></div>
+      <div class="hero-eye-td"><div class="eye-line"></div></div>
+      <div class="hero-eye-td"><div class="eye-txt">Inaugural Edition</div></div>
+    </div>
+    <h1>The Science Works.<br><em>The Math Doesn&#8217;t.</em></h1>
+    <div class="hero-rule"></div>
+    <p>Too many breakthrough therapies die not in the lab, but on a spreadsheet. Capital concentration, escalating timelines, and impossible cost structures prevent early-stage companies from completing the trials that could change medicine. <strong>Vantage is a clinical trials platform in Kazakhstan</strong>, built by biotech operators and investors to solve that problem without compromising scientific rigor or global regulatory standing.</p>
+    <p>This is our monthly publication covering clinical development intelligence, Kazakhstan updates, and key news from Vantage and the broader biopharma ecosystem. We are glad to have you with us.</p>
+  </div>
+
+  <div class="blue-bar"></div>
+
+  <!-- THE PROBLEM -->
+  <div class="sec">
+    <div class="sec-eye">
+      <div class="sec-eye-td"><div class="eye-dot"></div></div>
+      <div class="sec-eye-td"><div class="eye-lbl">The Problem We Solve</div></div>
+    </div>
+    <h2>The Clinical Trials System Is Broken for Early-Stage Innovators</h2>
+    <p class="body">82% of biotech capital is controlled by just 11 mega-funds. The median cost to reach FDA approval is <strong>$2 billion</strong>, yet most startups will never raise more than $30M. 86% of all capital flows to late-stage trials, leaving Preclinical and Phase I programs starved. The result: <strong>more than 90% of startups never raise enough to complete a clinical trial</strong>, regardless of scientific merit. The system rewards proximity to capital, not quality of science.</p>
+    <div class="stats">
+      <div class="stats-row">
+        <div class="stat"><div class="stat-n">82%</div><div class="stat-l">of biotech capital held by just 11 mega-funds</div></div>
+        <div class="stat"><div class="stat-n">$2B</div><div class="stat-l">median cost of an FDA-approved drug</div></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-n">86%</div><div class="stat-l">of capital goes late-stage, starving early programs</div></div>
+        <div class="stat"><div class="stat-n">90%+</div><div class="stat-l">of startups never finish a clinical trial</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KAZAKHSTAN -->
+  <div class="sec sec-gray">
+    <div class="sec-eye">
+      <div class="sec-eye-td"><div class="eye-dot"></div></div>
+      <div class="sec-eye-td"><div class="eye-lbl">Our Solution</div></div>
+    </div>
+    <h2>Kazakhstan Is the Game Changer the Industry Overlooked</h2>
+    <p class="body">A clinical trials platform built in Kazakhstan, partnering with global biopharma to accelerate clinical programs. Built by biotech operators and investors, Vantage solves the cost and timeline crisis killing early-stage programs while making the financial math work for the first time.</p>
+    <div class="advs">
+      <div class="adv">
+        <div class="adv-td-n">01</div>
+        <div class="adv-td-body"><div class="adv-t">FDA-Aligned by Design</div><div class="adv-b">Kazakhstan&#8217;s clinical trial legislation and protocols are modeled directly on FDA standards. Data accepted simultaneously by EMA, NMPA, and MHRA. One trial, global regulatory coverage.</div></div>
+      </div>
+      <div class="adv">
+        <div class="adv-td-n">02</div>
+        <div class="adv-td-body"><div class="adv-t">2-3x Faster Start-Up</div><div class="adv-b">Streamlined approvals, minimal bureaucracy, and accelerated patient recruitment enabled by government-backed infrastructure and a rapidly maturing clinical ecosystem.</div></div>
+      </div>
+      <div class="adv">
+        <div class="adv-td-n">03</div>
+        <div class="adv-td-body"><div class="adv-t">20-30% of Typical Cost</div><div class="adv-b">Government-owned hospitals and structurally lower operational costs make early-phase trials financially viable across all indications and phases of development.</div></div>
+      </div>
+      <div class="adv">
+        <div class="adv-td-n">04</div>
+        <div class="adv-td-body"><div class="adv-t">Full Sovereign Backing</div><div class="adv-b">The government owns and operates the healthcare system and is actively building a national biopharma ecosystem. Institutional support unavailable in most trial jurisdictions.</div></div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-td-n"><div class="callout-n">250<em>+</em></div></div>
+      <div class="callout-td-div"><div class="callout-div"></div></div>
+      <div class="callout-td-txt"><div class="callout-txt">Completed and ongoing clinical trials in Kazakhstan already accepted by <em>FDA, EMA, NMPA, and MHRA</em>.<br><strong>The world&#8217;s leading biopharma companies are already here.</strong></div></div>
+    </div>
+    <div class="fda-bar">
+      <div class="fda-bar-td-text"><div class="fda-bar-text"><strong>Does the FDA accept Kazakhstan clinical data?</strong> The answer is well-established across all indications and phases of development. Read our full analysis based on publicly available FDA records.</div></div>
+      <div class="fda-bar-td-btn"><a href="https://docsend.com/v/sfyp8/vantage-fda-kz" target="_blank" class="fda-bar-btn" style="display:inline-block;background:#1B6FEA;color:#ffffff !important;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 16px;text-decoration:none;">Read the Memo &rarr;</a></div>
+    </div>
+  </div>
+
+  <!-- PHARMA LOGOS -->
+  <div class="pharma-sec">
+    <div class="pharma-lbl">Trusted by the World&#8217;s Leading Pharmaceutical Companies</div>
+    <div class="pharma-grid">
+      <div class="pharma-row">
+        <div class="pharma-cell"><img src="https://storage.mlcdn.com/account_image/2218827/DkkIW0C8YLqqkTxE4TlaFhiZCkx9tLw5r4tbrd9J.png" alt="Novartis"></div>
+        <div class="pharma-cell"><img src="https://storage.mlcdn.com/account_image/2218827/puAsctDFoy1tVEuK4O74o7fLldlPgyzsoka0ZQIc.png" alt="AstraZeneca"></div>
+        <div class="pharma-cell"><img src="https://storage.mlcdn.com/account_image/2218827/BqaPj0ze7hRiGoJkthjietjQnsrYaTyYk1AUhI0t.png" alt="Pfizer"></div>
+        <div class="pharma-cell"><img src="https://storage.mlcdn.com/account_image/2218827/CK5gR7vdnZUYv5RwB4zBYUuWmGawLyM8G8ZE7iNi.png" alt="Johnson &amp; Johnson"></div>
+      </div>
+      <div class="pharma-row">
+        <div class="pharma-cell"><img src="https://storage.mlcdn.com/account_image/2218827/Z4Dke8MhPsbjue03WGL92gkHXfJRRSbfNnxmBrcE.png" alt="Eli Lilly"></div>
+        <div class="pharma-cell"><img src="https://storage.mlcdn.com/account_image/2218827/yEF4wL7R0GXo6ck6hVddKmpArKd4pGDhCF61qA2X.png" alt="Sanofi"></div>
+        <div class="pharma-cell"><img src="https://storage.mlcdn.com/account_image/2218827/9sPhwcORIeM4ubBNmsEhFD9bIXtva9ONhp6AYtxK.png" alt="Roche"></div>
+        <div class="pharma-cell"><img src="https://storage.mlcdn.com/account_image/2218827/J9h6GNA4FdqswRLsbHOmvdVcUBlOruQTHtivxurv.png" alt="Bayer"></div>
+      </div>
+    </div>
+    <div class="reg-row">
+      <span class="reg-p">&#10003; FDA</span>
+      <span class="reg-p">&#10003; EMA</span>
+      <span class="reg-p">&#10003; NMPA</span>
+      <span class="reg-p">&#10003; MHRA</span>
+    </div>
+  </div>
+
+  <!-- TIGERMED -->
+  <div class="tiger-sec">
+    <div class="sec-eye">
+      <div class="sec-eye-td"><div class="eye-dot"></div></div>
+      <div class="sec-eye-td"><div class="eye-lbl">Global CRO Partnership</div></div>
+    </div>
+    <div class="tiger-header">
+      <div class="tiger-header-txt">The Global Partner: Tigermed</div>
+    </div>
+    <div class="tiger-top">
+      <div class="tiger-td-logo">
+        <img class="tiger-logo" src="https://storage.mlcdn.com/account_image/2218827/gdyN77fb51O1zFeOiV7dWtKA0d80hUXnAaCxNbuL.png" alt="Tigermed">
+        <a href="https://www.tigermedgrp.com" target="_blank" class="tiger-site">Learn More &rarr;</a>
+      </div>
+      <div class="tiger-td-desc">
+        <div class="tiger-desc">Tigermed is Vantage&#8217;s global CRO partner, bringing world-class trial execution, monitoring, and regulatory expertise across 37 countries. Vantage handles infrastructure access, government support, and local trial management. Together, we deliver a fully integrated path from protocol to approval.</div>
+      </div>
+    </div>
+    <div class="tiger-stats">
+      <div class="tiger-stats-row">
+        <div class="tstat"><div class="tstat-n">Top 10</div><div class="tstat-l">Global CRO, #1 in Asia</div></div>
+        <div class="tstat"><div class="tstat-n">11,000</div><div class="tstat-l">Employees across 37 countries</div></div>
+        <div class="tstat"><div class="tstat-n">3,200+</div><div class="tstat-l">Clients, 3,500+ sites managed</div></div>
+      </div>
+      <div class="tiger-stats-row">
+        <div class="tstat"><div class="tstat-n">831</div><div class="tstat-l">Drug trials ongoing</div></div>
+        <div class="tstat"><div class="tstat-n">700+</div><div class="tstat-l">Successful FDA/EMA/NMPA inspections</div></div>
+        <div class="tstat"><div class="tstat-n">614</div><div class="tstat-l">Device trials ongoing</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blue-bar"></div>
+
+  <!-- WHAT'S NEW -->
+  <div class="sec sec-gray">
+    <div class="sec-eye">
+      <div class="sec-eye-td"><div class="eye-dot"></div></div>
+      <div class="sec-eye-td"><div class="eye-lbl">What&#8217;s New at Vantage</div></div>
+    </div>
+    <h2>Updates from the Platform</h2>
+    <p class="body" style="margin-bottom:20px;">This section will carry key updates each month as we continue to grow, from site infrastructure and partnerships to regulatory milestones and what we are seeing in the market.</p>
+    <div class="new-item">
+      <div class="new-tag">ISSUE 1</div>
+      <div class="new-title">Launching The Vantage Brief</div>
+      <div class="new-body">After 18 months of building and validating the Vantage platform across government partnerships, site infrastructure, and global CRO integration, we are launching this newsletter as our primary channel for sharing what we see in the market. Clinical development is at an inflection point. Capital is more constrained, timelines are longer, and the bar for regulatory acceptance is rising. We believe Kazakhstan changes the calculus on all three. This is where we will share the evidence.</div>
+    </div>
+  </div>
+
+  <!-- WHAT TO EXPECT -->
+  <div class="sec">
+    <div class="sec-eye">
+      <div class="sec-eye-td"><div class="eye-dot"></div></div>
+      <div class="sec-eye-td"><div class="eye-lbl">The Vantage Brief</div></div>
+    </div>
+    <h2>What You Can Expect Each Month</h2>
+    <p class="body">Signal, not noise. Built for early-stage biotech teams, investors, CRO partners, and global pharma operators navigating the clinical development landscape.</p>
+    <div class="cards">
+      <div class="cards-row">
+        <div class="card">
+          <img src="https://storage.mlcdn.com/account_image/2218827/HHpe2TMqvTaGh1tUmQpZOd8P709yB5cYwNhtXN7W.png" width="36" height="36" style="display:block;margin-bottom:14px;" alt="">
+          <span class="card-n">01 &mdash;</span>
+          <div class="card-t">Kazakhstan Intelligence</div>
+          <div class="card-d">On-the-ground updates from one of the world&#8217;s fastest-growing clinical trial jurisdictions.</div>
+        </div>
+        <div class="card">
+          <img src="https://storage.mlcdn.com/account_image/2218827/5bn86OsR93xb5l2nIAPG7VOVTUh8lR1ht81OgIZC.png" width="36" height="36" style="display:block;margin-bottom:14px;" alt="">
+          <span class="card-n">02 &mdash;</span>
+          <div class="card-t">Industry News</div>
+          <div class="card-d">Biopharma developments, regulatory shifts, and clinical trial trends that affect your programs.</div>
+        </div>
+        <div class="card">
+          <img src="https://storage.mlcdn.com/account_image/2218827/kRNofNAB5vwtEQxcjdVUceFpy7SmA7dNmp607xCz.png" width="36" height="36" style="display:block;margin-bottom:14px;" alt="">
+          <span class="card-n">03 &mdash;</span>
+          <div class="card-t">Vantage Updates</div>
+          <div class="card-d">New partnerships, trial milestones, and collaboration opportunities from our platform.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BYLINE -->
+  <div class="byline">
+    <div class="byline-founders">
+      <div class="byline-row">
+        <div class="byline-cell">
+          <div class="byline-founder">
+            <div class="byline-td-photo"><img class="byline-photo" src="https://storage.mlcdn.com/account_image/2218827/mP9Lh35tfrNzTW8hQs5MZeSyAzbJrQ1RfVnjHeMG.png" alt="Charlie Regis"></div>
+            <div class="byline-td-info">
+              <div class="byline-founder-name">Charlie Regis</div>
+              <div class="byline-founder-title">Co-Founder &amp; Partner</div>
+            </div>
+          </div>
+        </div>
+        <div class="byline-cell">
+          <div class="byline-founder">
+            <div class="byline-td-photo"><img class="byline-photo" src="https://storage.mlcdn.com/account_image/2218827/mpATlKNRfelnCp5AKXY8f3gwEGAV09GsMFoyeZrg.png" alt="Almas Kenessary"></div>
+            <div class="byline-td-info">
+              <div class="byline-founder-name">Almas Kenessary</div>
+              <div class="byline-founder-title">Co-Founder &amp; Partner</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="byline-row">
+        <div class="byline-cell">
+          <div class="byline-founder">
+            <div class="byline-td-photo"><img class="byline-photo" src="https://storage.mlcdn.com/account_image/2218827/4b4P1lF50KYQbcVhr4uwcOaIWgLcn9B5JSo53mGj.png" alt="Zach Lomis"></div>
+            <div class="byline-td-info">
+              <div class="byline-founder-name">Zach Lomis</div>
+              <div class="byline-founder-title">Co-Founder &amp; Partner</div>
+            </div>
+          </div>
+        </div>
+        <div class="byline-cell">
+          <div class="byline-founder">
+            <div class="byline-td-photo"><img class="byline-photo" src="https://storage.mlcdn.com/account_image/2218827/2Fdi263jpqSLr9kpkaCcXszRbalXTmhpoZlfRwcM.jpg" alt="Didar Bitmanov"></div>
+            <div class="byline-td-info">
+              <div class="byline-founder-name">Didar Bitmanov</div>
+              <div class="byline-founder-title">COO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="byline-quote">We started Vantage because we watched too many high-conviction science programs fail to reach patients for the wrong reasons. If you are working on something early-stage and want to understand what is possible in Kazakhstan, we would love to hear from you.</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta" bgcolor="#0D0D0D">
+    <div class="cta-sa"></div><div class="cta-sb"></div><div class="cta-sc"></div>
+    <div class="cta-pre">Get Started</div>
+    <h2>Ready to Change the Math<br>on Your <em>Next Trial?</em></h2>
+    <p>Share your clinical trial protocol and therapeutic objectives with the Vantage team. We will evaluate feasibility, regulatory pathway, and cost structure, and return a full proposal with costs, timelines, and site recommendations.</p>
+    <a href="mailto:info@vantage-ct.com?subject=Clinical%20Trial%20Inquiry%20%E2%80%94%20Vantage" class="cta-btn" style="display:inline-block;background:#1B6FEA;color:#ffffff !important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:16px 34px;text-decoration:none;">Start a Conversation &rarr;</a>
+    <span class="cta-sub">Or reach us at <a href="mailto:info@vantage-ct.com" style="color:#1B6FEA;text-decoration:none;font-weight:600;">info@vantage-ct.com</a> &nbsp;&middot;&nbsp; <a href="https://vantage-ct.com" target="_blank" style="color:#1B6FEA;text-decoration:none;font-weight:600;">vantage-ct.com</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/company/vantage-ct" target="_blank" style="color:#1B6FEA;text-decoration:none;font-weight:600;">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="{$unsubscribe}" style="color:#1B6FEA;text-decoration:none;font-weight:600;">Unsubscribe</a></span>
+    <span class="cta-sub" style="margin-top:8px;">Was this forwarded to you? <a href="https://subscribepage.io/lGFJzt" target="_blank" style="color:#1B6FEA;text-decoration:none;font-weight:600;">Subscribe here &rarr;</a></span>
+  </div>
+
+</div>
+</td></tr></table>
+</body>
+</html>
