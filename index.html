@@ -4,7 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Vantage Clinical | Clinical Research in Kazakhstan</title>
-<meta name="description" content="A clinical trials platform in Kazakhstan, partnering with global biopharma to accelerate clinical programs. Built by biotech operators and investors." />
+<meta name="description" content="Sovereign-backed clinical trial infrastructure in Kazakhstan. FDA-aligned protocols, 2-3x faster enrollment, 20-30% of Western cost." />
+<meta property="og:title" content="Vantage Clinical | Clinical Research in Kazakhstan" />
+<meta property="og:description" content="Sovereign-backed clinical trial infrastructure in Kazakhstan. FDA-aligned protocols, 2-3x faster enrollment, 20-30% of Western cost." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vantage-ct.com/" />
+<meta property="og:site_name" content="Vantage Clinical" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Vantage Clinical | Clinical Research in Kazakhstan" />
+<meta name="twitter:description" content="Sovereign-backed clinical trial infrastructure in Kazakhstan. FDA-aligned protocols, 2-3x faster enrollment, 20-30% of Western cost." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231B6FEA'/><text x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='22' fill='white'>V</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,24 +62,24 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s}
 
-/* HERO — full width, text on left, video fills behind */
+/* HERO - full width, text on left, video fills behind */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero-video{position:absolute;inset:0;z-index:0}
 .hero-video iframe{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.77vh;transform:translate(-50%,-50%);pointer-events:none;opacity:.28}
 .hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(7,9,28,.95) 45%,rgba(7,9,28,.5) 100%)}
-.hero-content{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:160px 32px 120px;width:100%}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--blue-faint);border:1px solid var(--blue-border);padding:6px 16px;border-radius:6px;font-size:11px;font-weight:700;color:#6ba8f5;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}
+.hero-content{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:140px 32px 96px;width:100%}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--blue-faint);border:1px solid var(--blue-border);padding:6px 16px;border-radius:6px;font-size:11px;font-weight:700;color:#6ba8f5;letter-spacing:.09em;text-transform:uppercase;margin-bottom:24px}
 .hero-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,5vw,66px);font-weight:700;line-height:1.05;letter-spacing:-.025em;margin-bottom:24px;max-width:700px}
 .hero-title span{color:var(--blue)}
-.hero-desc{font-size:17px;color:var(--text2);line-height:1.72;max-width:520px;margin-bottom:36px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
+.hero-desc{font-size:17px;color:var(--text2);line-height:1.72;max-width:520px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:8px;font-weight:600;font-size:15px;transition:.2s;font-family:'Inter',sans-serif;cursor:pointer;border:none}
 .btn-primary{background:var(--blue);color:#fff}
 .btn-primary:hover{background:var(--blue-lt);transform:translateY(-2px);box-shadow:0 8px 28px rgba(27,111,234,.4)}
 .btn-ghost{background:transparent;color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.18)}
 .btn-ghost:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
 
-/* HERO STATS — inline below CTA */
+/* HERO STATS - inline below CTA */
 .hero-stats{display:flex;gap:36px;flex-wrap:wrap}
 .hs{border-left:2px solid var(--blue-border);padding-left:16px}
 .hs-num{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:#fff;line-height:1}
@@ -84,20 +92,20 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 @keyframes sw{0%{opacity:1;top:5px}100%{opacity:0;top:16px}}
 
 /* SECTION */
-.section{padding:72px 0}
+.section{padding:60px 0}
 .container{max-width:1280px;margin:0 auto;padding:0 32px}
 .sec-eye{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
 .sec-eye::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0}
 .sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
 .sec-sub{font-size:16px;color:var(--text);line-height:1.72;max-width:620px}
-.sec-header{margin-bottom:52px}
+.sec-header{margin-bottom:40px}
 .t-blue{color:var(--blue)}
 .t-gold{color:#FACC15}
 .t-green{color:#22c55e}
 
-/* PROBLEM — stats as big callouts, not charts */
+/* PROBLEM - stats as big callouts, not charts */
 .section-problem{background:var(--bg2)}
-.problem-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:52px}
+.problem-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px}
 .prob-stat{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;text-align:center;transition:.3s}
 .prob-stat:hover{border-color:var(--blue-border);transform:translateY(-3px)}
 .prob-stat-num{font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:800;color:var(--blue);line-height:1;margin-bottom:10px}
@@ -121,7 +129,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 /* SHOWCASE */
 .section-showcase{background:var(--bg2)}
-.pharma-wrap{overflow:hidden;position:relative;margin:36px 0 52px;padding:2px 0}
+.pharma-wrap{overflow:hidden;position:relative;margin:28px 0 40px;padding:2px 0}
 .pharma-wrap::before,.pharma-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
 .pharma-wrap::before{left:0;background:linear-gradient(to right,var(--bg2),transparent)}
 .pharma-wrap::after{right:0;background:linear-gradient(to left,var(--bg2),transparent)}
@@ -130,22 +138,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .pharma-item{background:#fff;border-radius:8px;padding:9px 22px;display:flex;align-items:center;justify-content:center;height:52px;min-width:100px;flex-shrink:0}
 .pharma-item img{height:32px;width:auto;object-fit:contain;max-width:130px}
 
-/* VIDEO — custom overlay to hide YouTube chrome */
+/* VIDEO - custom overlay to hide YouTube chrome */
 .video-wrap{position:relative;border-radius:var(--r-lg);overflow:hidden;background:#000;aspect-ratio:16/9;box-shadow:0 32px 80px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.08)}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;z-index:1}
-
-/* KAZAKHSTAN */
-.section-kz{position:relative;background:var(--bg);overflow:hidden;padding:120px 0}
-.kz-bg{position:absolute;inset:0}
-.kz-bg img{width:100%;height:100%;object-fit:cover;opacity:.1;filter:saturate(.3)}
-.kz-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,var(--bg) 0%,transparent 20%,transparent 80%,var(--bg) 100%)}
-.kz-inner{position:relative;z-index:1}
-.kz-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.kz-card{background:rgba(12,16,48,0.75);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r);padding:26px;transition:.3s}
-.kz-card:hover{border-color:var(--blue-border);transform:translateY(-3px)}
-.kz-icon{width:44px;height:44px;border-radius:10px;background:var(--blue-faint);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--blue);margin-bottom:16px}
-.kz-card h3{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px}
-.kz-card p{font-size:13px;color:var(--text);line-height:1.65}
 
 /* PLATFORM */
 .section-platform{background:var(--bg2)}
@@ -256,8 +251,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hamburger{display:flex}
 }
 @media(max-width:768px){
-  .section{padding:72px 0}
-  .hero-content{padding:140px 24px 80px}
+  .section{padding:56px 0}
+  .hero-content{padding:120px 24px 72px}
   .sol-grid,.kz-grid,.how-grid,.platform-grid{grid-template-columns:1fr}
   .problem-stats{grid-template-columns:repeat(2,1fr)}
   .form-row,.form-2col{grid-template-columns:1fr}
@@ -295,7 +290,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   <div class="hero-content">
     <div class="hero-pill"><i class="fas fa-certificate"></i> FDA · EMA · ICH-GCP Compliant</div>
     <h1 class="hero-title">Democratizing Access, Speed, and Cost for Clinical Trials in <span>Kazakhstan</span></h1>
-    <p class="hero-desc">A clinical trials platform in Kazakhstan, partnering with global biopharma to accelerate clinical programs. Built by biotech operators and investors to solve the cost and timeline crisis killing early-stage programs.</p>
+    <p class="hero-desc">Sovereign-backed clinical trial infrastructure in Kazakhstan, built by biotech operators and investors. FDA-aligned protocols, 2-3x faster enrollment, and 20-30% of Western cost.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn btn-primary"><span>Start Feasibility Assessment</span><i class="fas fa-arrow-right"></i></a>
       <a href="#solution" class="btn btn-ghost"><span>How It Works</span></a>
@@ -351,7 +346,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     <div class="sec-header">
       <div class="sec-eye">The Solution</div>
       <h2 class="sec-title">Kazakhstan is <span class="t-blue">The Game Changer</span></h2>
-      <p class="sec-sub">A clinical trials platform built in Kazakhstan, partnering with global biopharma to accelerate clinical programs. Built by biotech operators and investors, Vantage solves the cost and timeline crisis killing early-stage programs while making the financial math work for the first time.</p>
+      <p class="sec-sub">Centralized healthcare data, government-owned hospitals, and structurally lower costs combine to make early-phase trials financially viable across every indication and phase.</p>
     </div>
     <div class="sol-grid">
       <div class="sol-card">
@@ -362,7 +357,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div class="sol-card">
         <div class="sol-icon"><i class="fas fa-bolt"></i></div>
         <h3>2-3x Faster Start Up</h3>
-        <p>Streamlined approvals, minimal bureaucracy, and accelerated patient recruitment enabled by government-backed infrastructure and a rapidly maturing clinical ecosystem.</p>
+        <p>A centralized digital health database of 20 million citizens compresses patient identification from months to weeks. Site activation runs in a fraction of Western timelines.</p>
       </div>
       <div class="sol-card">
         <div class="sol-icon"><i class="fas fa-dollar-sign"></i></div>
@@ -372,7 +367,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div class="sol-card">
         <div class="sol-icon"><i class="fas fa-landmark"></i></div>
         <h3>Full Sovereign Backing</h3>
-        <p>The government owns and operates the healthcare system and is actively building a national biopharma ecosystem. Institutional support unavailable in most trial jurisdictions.</p>
+        <p>The government owns and operates the healthcare system and is actively investing in biopharma development. Institutional support no other jurisdiction provides.</p>
       </div>
     </div>
     <div class="callout-250">
@@ -439,7 +434,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     <div class="sec-header">
       <div class="sec-eye">The Platform</div>
       <h2 class="sec-title">Vantage is the <span class="t-blue">Kazakhstan Layer</span></h2>
-      <p class="sec-sub">Sovereign-backed infrastructure for clinical trials in Kazakhstan. Vantage delivers the in-country platform — government integration, site access, accelerated recruitment, and regulatory navigation — while sponsors retain full flexibility on CRO selection.</p>
+      <p class="sec-sub">Vantage delivers the in-country platform: government integration, site access, accelerated recruitment, and regulatory navigation. Sponsors retain full flexibility on CRO selection.</p>
     </div>
     <div class="platform-grid">
       <div class="platform-card">
@@ -467,7 +462,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div class="cro-callout-ico"><i class="fas fa-handshake"></i></div>
       <div>
         <h3>Compatible with Your CRO of Choice</h3>
-        <p>Vantage is CRO-agnostic. Sponsors can run trials through Vantage's platform with their existing CRO partner, or Vantage will coordinate with leading global CROs to manage execution, monitoring, data management, and regulatory compliance — without disrupting protocols or sponsor preferences.</p>
+        <p>Vantage is CRO-agnostic. Sponsors can run trials through Vantage's platform with their existing CRO partner, or Vantage will coordinate with leading global CROs to manage execution, monitoring, data management, and regulatory compliance. Protocols and sponsor preferences stay intact.</p>
       </div>
     </div>
   </div>
@@ -500,7 +495,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div class="how-card">
         <div class="how-step-num">Step 04</div>
         <h3>Execute with Confidence</h3>
-        <p>Your FDA-aligned trial runs on Vantage infrastructure with your CRO of choice — yours or one of our global partners.</p>
+        <p>Your FDA-aligned trial runs on Vantage infrastructure with your CRO of choice, yours or one of our global partners.</p>
       </div>
     </div>
   </div>
@@ -517,7 +512,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div class="fda-q">The question we hear</div>
       <h3 class="fda-headline">Yes, it does. The answer is not that simple.</h3>
       <p class="fda-sub">The FDA does not evaluate clinical data by country of origin.</p>
-      <p class="fda-body">The FDA reviews integrated datasets submitted in an NDA or BLA. It evaluates them against GCP compliance, data integrity, and inspection access — all conditions Kazakhstan satisfies under its existing regulatory framework. Major pharmaceutical sponsors including Roche, Pfizer, Sanofi, Eli Lilly, and Johnson &amp; Johnson have already conducted registered trials there. Multiple FDA-approved drugs had pivotal or supportive trial sites in Kazakhstan, including Vonjo, Keytruda, Rinvoq, Alecensa, and Tecentriq. The infrastructure is validated. The question is one of execution quality, not geography. That is where Vantage and its CRO partners deliver.</p>
+      <p class="fda-body">The FDA reviews integrated datasets submitted in an NDA or BLA. It evaluates them against GCP compliance, data integrity, and inspection access. Kazakhstan satisfies all three under its existing regulatory framework. Major pharmaceutical sponsors including Roche, Pfizer, Sanofi, Eli Lilly, and Johnson &amp; Johnson have already conducted registered trials there. Multiple FDA-approved drugs had pivotal or supportive trial sites in Kazakhstan, including Vonjo, Keytruda, Rinvoq, Alecensa, and Tecentriq. The infrastructure is validated. The question is execution quality, not geography. That is where Vantage and its CRO partners deliver.</p>
       <a href="https://docsend.com/v/sfyp8/vantage-fda-kz" target="_blank" class="fda-link"><i class="fas fa-file-alt"></i> Read the Full Analysis</a>
     </div>
   </div>
@@ -530,11 +525,11 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div class="nl-left">
         <div class="sec-eye">Newsletter</div>
         <h2 class="sec-title" style="margin-bottom:12px">The <span class="t-blue">Vantage Brief</span></h2>
-        <p style="font-size:15px;color:var(--text);line-height:1.72;margin-bottom:24px">Monthly intelligence for biotech operators and investors: regulatory updates, Kazakhstan trial insights, and Vantage news. Never spam.</p>
+        <p style="font-size:15px;color:var(--text);line-height:1.72;margin-bottom:24px">Monthly intelligence for biotech operators and investors: regulatory updates, trial insights, and Vantage news. Never spam.</p>
         <div class="nl-bullets">
           <div class="nl-bullet"><i class="fas fa-check-circle"></i><span>FDA and EMA regulatory updates affecting early-stage trials</span></div>
-          <div class="nl-bullet"><i class="fas fa-check-circle"></i><span>Kazakhstan clinical ecosystem developments</span></div>
-          <div class="nl-bullet"><i class="fas fa-check-circle"></i><span>CRO and industry ecosystem news</span></div>
+          <div class="nl-bullet"><i class="fas fa-check-circle"></i><span>Kazakhstan clinical infrastructure developments</span></div>
+          <div class="nl-bullet"><i class="fas fa-check-circle"></i><span>CRO and industry partnership news</span></div>
           <div class="nl-bullet"><i class="fas fa-check-circle"></i><span>Drug approvals and trial results from Kazakhstan sites</span></div>
         </div>
       </div>
@@ -606,7 +601,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     <div class="footer-grid">
       <div>
         <img src="vantage-logo-white.png" alt="Vantage Clinical" class="f-logo" />
-        <p class="f-tag">Transforming the cost and time profile of clinical programs through Kazakhstan's sovereign-backed clinical trial infrastructure.</p>
+        <p class="f-tag">Sovereign-backed clinical trial infrastructure in Kazakhstan. FDA-aligned protocols, 2-3x faster enrollment, 20-30% of Western cost.</p>
       </div>
       <div>
         <h4>Contact</h4>
